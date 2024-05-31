@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './input.component.css'
 })
 export class InputComponent {
-
+  test = () => {
+    console.log("test");
+  }
 }
