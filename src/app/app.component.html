@@ -1,4 +1,15 @@
 <div style="background-color: lightgray">
   <app-input (createEntry)="create()"></app-input>
-  <app-table [data]="data" (deleteEntry)="delete($event)"></app-table>
+  <app-table
+    [data]="data"
+    (deleteEntry)="delete($event)"
+    (editEntry)="edit($event)"
+  ></app-table>
+  <app-popup
+    [display]="display"
+    [data]="data"
+    [i]="current"
+    (close)="closePopup()"
+    (save)="savePopup($event)"
+  ></app-popup>
 </div>

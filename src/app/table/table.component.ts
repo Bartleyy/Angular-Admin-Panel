@@ -14,16 +14,17 @@ type customer = {
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent implements OnInit{
+export class TableComponent{
  @Input() data?: Array<customer>;
 
  @Output('deleteEntry') Deletion = new EventEmitter<number>();
+ @Output('editEntry') Edit = new EventEmitter<number>();
 
 delete = (i: number) => {
   this.Deletion.emit(i);
 }
 
- ngOnInit(): void {
-     
- }
+edit = (i: number) => {
+  this.Edit.emit(i);
+}
 }
