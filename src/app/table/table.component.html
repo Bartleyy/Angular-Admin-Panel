@@ -1,0 +1,22 @@
+<div style="margin-left: 0">
+  <table style="width: 100%">
+    <tr>
+      <th style="width: 15%; text-align: left; padding-left: 20px">
+        Kundennummer
+      </th>
+      <th style="width: 25%; text-align: left">Name</th>
+      <th style="width: 50%; text-align: left">Info</th>
+      <th style="width: 5%; text-align: center"></th>
+      <th style="width: 5%; text-align: center"></th>
+    </tr>
+    <tr *ngFor="let entry of data; index as i">
+      <td style="padding-left: 20px">{{ data![i].id }}</td>
+      <td>{{ data![i].name }}</td>
+      <td>
+        {{ data![i].info }}
+      </td>
+      <td><button (click)="edit(i)">EDIT</button></td>
+      <td><button (click)="delete(i)">DELETE</button></td>
+    </tr>
+  </table>
+</div>
