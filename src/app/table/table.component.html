@@ -4,17 +4,17 @@
       <th style="width: 15%; text-align: left">Kundennummer</th>
       <th style="width: 25%; text-align: left">Name</th>
       <th style="width: 50%; text-align: left">Info</th>
-      <th style="width: 5%; text-align: center;"></th>
-      <th style="width: 5%; text-align: center;"></th>
+      <th style="width: 5%; text-align: center"></th>
+      <th style="width: 5%; text-align: center"></th>
     </tr>
-    <tr *ngFor="let entry of arr">
-      <td>0</td>
-      <td>TEST</td>
+    <tr *ngFor="let entry of data; index as i">
+      <td>{{ data![i].id }}</td>
+      <td>{{ data![i].name }}</td>
       <td>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, facere!
+        {{ data![i].info }}
       </td>
       <td><button>EDIT</button></td>
-      <td><button>DELETE</button></td>
+      <td><button (click)="delete(i)">DELETE</button></td>
     </tr>
   </table>
 </div>

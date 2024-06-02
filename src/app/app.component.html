@@ -1,4 +1,4 @@
 <div style="background-color: lightgray">
-  <app-input></app-input>
-  <app-table></app-table>
+  <app-input (createEntry)="create()"></app-input>
+  <app-table [data]="data" (deleteEntry)="delete($event)"></app-table>
 </div>

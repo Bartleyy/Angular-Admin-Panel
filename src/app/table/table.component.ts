@@ -1,5 +1,11 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
+type customer = {
+  id: number,
+  name: String,
+  info: String
+}
 
 @Component({
   selector: 'app-table',
@@ -8,6 +14,16 @@ import { Component } from '@angular/core';
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent {
- arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+export class TableComponent implements OnInit{
+ @Input() data?: Array<customer>;
+
+ @Output('deleteEntry') Deletion = new EventEmitter<number>();
+
+delete = (i: number) => {
+  this.Deletion.emit(i);
+}
+
+ ngOnInit(): void {
+     
+ }
 }
