@@ -7,7 +7,7 @@
   "
 >
   <div class="menu-item" style="margin-left: 0">
-    <input type="text" name="filter" id="filter" placeholder="Filter" />
+    <input #filter type="text" name="filter" id="filter" placeholder="Filter" (keyup)="ft(filter.value)" />
   </div>
   <div class="menu-item">
     <button

@@ -22,6 +22,11 @@ export class AppComponent {
   title = 'AdminPanel';
   display = "none";
   current = 0;
+  filter = ""
+
+  applyFilter = (e: String) => {
+    this.filter = e.toString();
+  }
 
   //saves data changes in the array
   savePopup = (e: {name: String, info: String}) => {
