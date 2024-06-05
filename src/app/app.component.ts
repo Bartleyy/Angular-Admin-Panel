@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputComponent } from './input/input.component';
 import { TableComponent } from './table/table.component';
@@ -15,9 +15,10 @@ type customer = {
   standalone: true,
   imports: [RouterOutlet, InputComponent, TableComponent, PopupComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
+
   title = 'AdminPanel';
   display = "none";
   current = 0;
@@ -71,6 +72,8 @@ export class AppComponent {
       info: "test" + id
     });
     this.sort();
+
+    this.edit(id);
   }
 
   //deletes an entry
