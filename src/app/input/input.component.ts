@@ -9,6 +9,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class InputComponent {
   @Output("createEntry") Creation = new EventEmitter;
+  @Output("filter") Filter = new EventEmitter;
+
+  ft = (e: String) => {
+    this.Filter.emit(e);
+  }
+
 
   create = () => {
     console.log("create");

@@ -10,6 +10,7 @@
       <th style="width: 5%; text-align: center"></th>
     </tr>
     <tr *ngFor="let entry of data; index as i">
+      <ng-container *ngIf="data![i].name.includes(filter!)">
       <td style="padding-left: 20px">{{ data![i].id }}</td>
       <td>{{ data![i].name }}</td>
       <td>
@@ -17,6 +18,7 @@
       </td>
       <td><button (click)="edit(i)">EDIT</button></td>
       <td><button (click)="delete(i)">DELETE</button></td>
+      </ng-container>
     </tr>
   </table>
 </div>

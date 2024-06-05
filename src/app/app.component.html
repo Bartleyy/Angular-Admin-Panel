@@ -1,7 +1,8 @@
 <div style="background-color: lightgray">
-  <app-input (createEntry)="create()"></app-input>
+  <app-input (createEntry)="create()" (filter)="applyFilter($event)"></app-input>
   <app-table
     [data]="data"
+    [filter]="filter"
     (deleteEntry)="delete($event)"
     (editEntry)="edit($event)"
   ></app-table>
